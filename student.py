@@ -1,11 +1,16 @@
 
-name = input("Enter Student Name: ")
+import sys
 
-marks = []
+if len(sys.argv) == 7:
+    name = sys.argv[1]
+    marks = [int(x) for x in sys.argv[2:7]]
+else:
+    name = input("Enter Student Name: ")
+    marks = []
 
-for i in range(1, 6):
-    mark = int(input("Enter Mark " + str(i) + ": "))
-    marks.append(mark)
+    for i in range(1, 6):
+        mark = int(input("Enter Mark " + str(i) + ": "))
+        marks.append(mark)
 
 total = sum(marks)
 average = total / 5
